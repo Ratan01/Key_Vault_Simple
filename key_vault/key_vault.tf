@@ -10,12 +10,12 @@ provider "azurerm" {
 data "azurerm_client_config" "current" {}
 
 resource "azurerm_resource_group" "rg" {
-  name     = "keyvault-resources"
+  name     = "keyvault-resources11"
   location = "West Europe"
 }
 
-resource "azurerm_key_vault" "kv" {
-  name                        = "keyvault12"
+resource "azurerm_key_vault" "kev" {
+  name                        = "keyvault123"
   location                    = azurerm_resource_group.rg.location
   resource_group_name         = azurerm_resource_group.rg.name
   enabled_for_disk_encryption = true
