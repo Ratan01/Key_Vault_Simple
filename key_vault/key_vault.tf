@@ -10,7 +10,7 @@ resource "azurerm_resource_group" "rg" {
   location = "West Europe"
 }
 
-resource "azurerm_key_vault" "kav" {
+resource "azurerm_key_vault" "kave" {
   name                       = "rkkeyvault"
   location                   = azurerm_resource_group.rg.location
   resource_group_name        = azurerm_resource_group.rg.name
@@ -41,7 +41,7 @@ resource "azurerm_key_vault" "kav" {
 
 resource "azurerm_key_vault_key" "generated" {
   name         = "generated-certificate-rk"
-  key_vault_id = azurerm_key_vault.kav.id
+  key_vault_id = azurerm_key_vault.kave.id
   key_type     = "RSA"
   key_size     = 2048
 
